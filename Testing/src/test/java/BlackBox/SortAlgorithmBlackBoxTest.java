@@ -53,4 +53,18 @@ public class SortAlgorithmBlackBoxTest extends SortSetup {
         int[] expectedOutput = new int[]{1,5,5,6,7};
         sortAlgorithmPUT.run(input,expectedOutput);
     }
+
+    @Test
+    public void testSeven(){
+        int[] input = new int[]{2};
+        int[] expectedOutput = new int[]{2};
+        sortAlgorithmPUT.run(input,expectedOutput);
+    }
+
+    @Test
+    public void testEight(){
+        int[] input = new int[]{2,5,3,7,8,3,1,5,3,7};
+        int[] expectedOutput = new int[]{1,2,3,3,3,5,5,7,7,8};
+        sortAlgorithmPUT.run(input,expectedOutput);
+    }
 }
