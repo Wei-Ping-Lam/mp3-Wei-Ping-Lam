@@ -109,7 +109,7 @@ public class LruCacheBlackBoxTest extends LruCacheSetup {
                 functionParameters2,
                 null);
 
-        //put key=1, value = 3
+        //put key=1, value = 2
         int[] functionParameters4 = new int[]{1,2};
         lruCachePUT.run(LruCacheMethod.Put,
                 functionParameters4,
@@ -119,6 +119,6 @@ public class LruCacheBlackBoxTest extends LruCacheSetup {
         int[] functionParameters3 = new int[]{1};
         lruCachePUT.run(LruCacheMethod.Get,
                 functionParameters3,
-                3);
+                2);
     }
 }
