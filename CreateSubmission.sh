@@ -7,4 +7,5 @@ cp Testing/src/test/java/WhiteBox/BinaryTreeSerializerTest.java TestingSubmissio
 cp Testing/src/test/java/WhiteBox/IpValidatorTest.java TestingSubmission
 
 # Zip submission
-zip TestingSubmission.zip TestingSubmission/*.java
+cd TestingSubmission
+zip TestingSubmission.zip *.java
