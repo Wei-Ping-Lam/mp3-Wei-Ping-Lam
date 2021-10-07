@@ -81,4 +81,67 @@ public class SortAlgorithmBlackBoxTest extends SortSetup {
         int[] expectedOutput = new int[]{2,3,3,3,6};
         sortAlgorithmPUT.run(input, expectedOutput);
     }
+
+    @Test
+    public void testEleven() {
+        int[] input = new int[0];
+        int[] expectedOutput = new int[0];
+        sortAlgorithmPUT.run(input, expectedOutput);
+    }
+
+    @Test
+    public void testTwelve() {
+        int[] input = new int[]{1};
+        int[] expectedOutput = new int[]{1};
+        sortAlgorithmPUT.run(input, expectedOutput);
+    }
+
+    @Test
+    public void testThirteen() {
+        int[] input = new int[]{Integer.MAX_VALUE, 1, 1};
+        int[] expectedOutput = new int[]{1,1,Integer.MAX_VALUE};
+        sortAlgorithmPUT.run(input,expectedOutput);
+    }
+
+    @Test
+    public void testFourteen() {
+        int[] input = new int[]{Integer.MIN_VALUE, 1, 1};
+        int[] expectedOutput = new int[]{Integer.MIN_VALUE, 1, 1};
+        sortAlgorithmPUT.run(input,expectedOutput);
+    }
+
+    @Test
+    public void testFifteen() {
+        int[] input = new int[]{3,3,3,2,2,2,-1,-1,-1};
+        int[] expectedOutput = new int[] {-1, -1, -1, 2, 2, 2, 3, 3, 3};
+        sortAlgorithmPUT.run(input, expectedOutput);
+    }
+
+    @Test
+    public void testSixteen() {
+        int[] input = new int[]{8, 7, 6, 5, 1, -1, 4, 3, 2, 1};
+        int[] expectedOutput = new int[] {-1, 1, 1, 2, 3, 4, 5, 6, 7, 8};
+        sortAlgorithmPUT.run(input, expectedOutput);
+    }
+
+    @Test
+    public void testSeventeen() {
+        int[] input = new int[]{8, 7, 6, -1, 5, 1, -1, 4, 3, 2, 1, -1, -1};
+        int[] expectedOutput = new int[] {-1, -1, -1, -1, 1, 1, 2, 3, 4, 5, 6, 7, 8};
+        sortAlgorithmPUT.run(input, expectedOutput);
+    }
+
+    @Test
+    public void testEighteen() {
+        int[] input = new int[]{-1, 0, 1, 2, 3};
+        int[] expectedOutput = new int[]{-1, 0, 1, 2, 3};
+        sortAlgorithmPUT.run(input, expectedOutput);
+    }
+
+    @Test
+    public void testNineteen() {
+        int[] input = new int[]{-2, -2, 8, 8, 8, 7, 6, -1, 4, 5, 1, -1, 4, 4, 4, 4, 4, 3, 2, 1, -1, -1};
+        int[] expectedOutput = new int[] {-2, -2, -1, -1, -1, -1, 1, 1, 2, 3, 4, 4, 4, 4, 4, 4, 5, 6, 7, 8, 8, 8};
+        sortAlgorithmPUT.run(input, expectedOutput);
+    }
 }
