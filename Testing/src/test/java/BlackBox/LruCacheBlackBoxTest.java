@@ -94,4 +94,31 @@ public class LruCacheBlackBoxTest extends LruCacheSetup {
                 functionParameters3,
                 -1);
     }
+
+    @Test
+    public void TestFour(){
+        //constructor size = 2
+        int[] functionParameters = new int[]{2};
+        lruCachePUT.run(LruCacheMethod.Constructor,
+                functionParameters,
+                null);
+
+        //put key=1, value = 2
+        int[] functionParameters2 = new int[]{1,2};
+        lruCachePUT.run(LruCacheMethod.Put,
+                functionParameters2,
+                null);
+
+        //put key=1, value = 3
+        int[] functionParameters4 = new int[]{1,2};
+        lruCachePUT.run(LruCacheMethod.Put,
+                functionParameters4,
+                null);
+
+        //get key = 1
+        int[] functionParameters3 = new int[]{1};
+        lruCachePUT.run(LruCacheMethod.Get,
+                functionParameters3,
+                3);
+    }
 }
