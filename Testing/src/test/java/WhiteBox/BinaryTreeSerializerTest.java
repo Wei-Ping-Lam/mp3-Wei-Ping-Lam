@@ -93,8 +93,12 @@ public class BinaryTreeSerializerTest {
     @Test
     public void deserializeTest5(){
         BinaryTreeSerializer bs = new BinaryTreeSerializerImpl();
-        String s = "[5]";
+        String s = "[5, 3, 7, 1, 3, null, null, null, null, null, null]";
         TreeNode root = new TreeNode(5);
+        root.left = new TreeNode(3);
+        root.right = new TreeNode(7);
+        root.left.left = new TreeNode(1);
+        root.left.right = new TreeNode(3);
         TreeNode rootret = bs.deserialize(s);
         assertEquals(root,rootret);
     }
