@@ -129,12 +129,18 @@ public class IpValidatorTest {
     @Test
     public void test20(){
         IpValidator tool = new IpValidatorImpl();
-        assertEquals("Neither",tool.validIPAddress("2001:0db8:85a3:00R0:0000:8a2e:0370:7334"));
+        assertEquals("Neither",tool.validIPAddress("2001:0db8:85a3:0R00:0000:8a2e:0370:7334"));
     }
 
     @Test
     public void test21(){
         IpValidator tool = new IpValidatorImpl();
-        assertEquals("Neither",tool.validIPAddress("2001:0db8:85a3:\000:0000:8a2e:0370:7334"));
+        assertEquals("Neither",tool.validIPAddress("2001:0db8:85a3:0;00:0000:8a2e:0370:7334"));
+    }
+
+    @Test
+    public void test21(){
+        IpValidator tool = new IpValidatorImpl();
+        assertEquals("Neither",tool.validIPAddress("2001:0db8:85a3:0!00:0000:8a2e:0370:7334"));
     }
 }
