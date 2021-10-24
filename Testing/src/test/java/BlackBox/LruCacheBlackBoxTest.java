@@ -7,7 +7,7 @@ import org.junit.Test;
 public class LruCacheBlackBoxTest extends LruCacheSetup {
 
     @Test
-    public void dummyTest(){
+    public void dummyTest() {
         //constructor size = 2
         int[] functionParameters = new int[]{2};
         lruCachePUT.run(LruCacheMethod.Constructor,
@@ -15,7 +15,7 @@ public class LruCacheBlackBoxTest extends LruCacheSetup {
                 null);
 
         //put key=1, value = 2
-        int[] functionParameters2 = new int[]{1,2};
+        int[] functionParameters2 = new int[]{1, 2};
         lruCachePUT.run(LruCacheMethod.Put,
                 functionParameters2,
                 null);
@@ -28,7 +28,7 @@ public class LruCacheBlackBoxTest extends LruCacheSetup {
     }
 
     @Test
-    public void test1(){
+    public void test1() {
         //constructor size = 5
         int[] functionParameters = new int[]{5};
         lruCachePUT.run(LruCacheMethod.Constructor,
@@ -42,7 +42,8 @@ public class LruCacheBlackBoxTest extends LruCacheSetup {
                 -1);
     }
 
-    public void test2(){
+    @Test
+    public void test2() {
         //constructor size = 2
         int[] functionParameters = new int[]{2};
         lruCachePUT.run(LruCacheMethod.Constructor,
@@ -50,13 +51,13 @@ public class LruCacheBlackBoxTest extends LruCacheSetup {
                 null);
 
         //put key=1, value = 2
-        int[] functionParameters2 = new int[]{1,2};
+        int[] functionParameters2 = new int[]{1, 2};
         lruCachePUT.run(LruCacheMethod.Put,
                 functionParameters2,
                 null);
 
         //put key=1, value = 3
-        int[] functionParameters4 = new int[]{1,3};
+        int[] functionParameters4 = new int[]{1, 3};
         lruCachePUT.run(LruCacheMethod.Put,
                 functionParameters4,
                 null);
@@ -69,7 +70,7 @@ public class LruCacheBlackBoxTest extends LruCacheSetup {
     }
 
     @Test
-    public void test3(){
+    public void test3() {
         //constructor size = 1
         int[] functionParameters = new int[]{1};
         lruCachePUT.run(LruCacheMethod.Constructor,
@@ -77,13 +78,13 @@ public class LruCacheBlackBoxTest extends LruCacheSetup {
                 null);
 
         //put key=1, value = 2
-        int[] functionParameters2 = new int[]{1,2};
+        int[] functionParameters2 = new int[]{1, 2};
         lruCachePUT.run(LruCacheMethod.Put,
                 functionParameters2,
                 null);
 
         //put key=2, value = 6
-        int[] functionParameters4 = new int[]{2,6};
+        int[] functionParameters4 = new int[]{2, 6};
         lruCachePUT.run(LruCacheMethod.Put,
                 functionParameters4,
                 null);
@@ -96,7 +97,7 @@ public class LruCacheBlackBoxTest extends LruCacheSetup {
     }
 
     @Test
-    public void test4(){
+    public void test4() {
         //constructor size = 2
         int[] functionParameters = new int[]{2};
         lruCachePUT.run(LruCacheMethod.Constructor,
@@ -104,13 +105,13 @@ public class LruCacheBlackBoxTest extends LruCacheSetup {
                 null);
 
         //put key=1, value = 2
-        int[] functionParameters2 = new int[]{1,2};
+        int[] functionParameters2 = new int[]{1, 2};
         lruCachePUT.run(LruCacheMethod.Put,
                 functionParameters2,
                 null);
 
         //put key=1, value = 2
-        int[] functionParameters4 = new int[]{1,2};
+        int[] functionParameters4 = new int[]{1, 2};
         lruCachePUT.run(LruCacheMethod.Put,
                 functionParameters4,
                 null);
@@ -123,7 +124,7 @@ public class LruCacheBlackBoxTest extends LruCacheSetup {
     }
 
     @Test
-    public void test5(){
+    public void test5() {
         //constructor size = 2
         int[] functionParameters = new int[]{2};
         lruCachePUT.run(LruCacheMethod.Constructor,
@@ -131,7 +132,7 @@ public class LruCacheBlackBoxTest extends LruCacheSetup {
                 null);
 
         //put key= -1, value = 2
-        int[] functionParameters2 = new int[]{-1,2};
+        int[] functionParameters2 = new int[]{-1, 2};
         lruCachePUT.run(LruCacheMethod.Put,
                 functionParameters2,
                 null);
@@ -144,7 +145,7 @@ public class LruCacheBlackBoxTest extends LruCacheSetup {
     }
 
     @Test(expected = NullPointerException.class)
-    public void test6(){
+    public void test6() {
         //constructor size = 2
         int[] functionParameters = new int[]{0};
         lruCachePUT.run(LruCacheMethod.Constructor,
@@ -152,7 +153,7 @@ public class LruCacheBlackBoxTest extends LruCacheSetup {
                 null);
 
         //put key=1, value = 2
-        int[] functionParameters2 = new int[]{1,2};
+        int[] functionParameters2 = new int[]{1, 2};
         lruCachePUT.run(LruCacheMethod.Put,
                 functionParameters2,
                 null);
@@ -160,13 +161,13 @@ public class LruCacheBlackBoxTest extends LruCacheSetup {
 
     @Test
     public void test7() {
-        int[]functionParameters = new int[]{100};
+        int[] functionParameters = new int[]{100};
         lruCachePUT.run(LruCacheMethod.Constructor,
                 functionParameters,
                 null);
 
         for (int i = -45; i < 45; i++) {
-            int[] functionParameters2 = new int[]{i, i*2};
+            int[] functionParameters2 = new int[]{i, i * 2};
             lruCachePUT.run(LruCacheMethod.Put,
                     functionParameters2,
                     null);
@@ -180,7 +181,7 @@ public class LruCacheBlackBoxTest extends LruCacheSetup {
                 functionParameters,
                 null);
 
-        int[] functionParameters2 = new int[]{Integer.MAX_VALUE,Integer.MAX_VALUE};
+        int[] functionParameters2 = new int[]{Integer.MAX_VALUE, Integer.MAX_VALUE};
         lruCachePUT.run(LruCacheMethod.Put,
                 functionParameters2,
                 null);
@@ -189,7 +190,6 @@ public class LruCacheBlackBoxTest extends LruCacheSetup {
         lruCachePUT.run(LruCacheMethod.Get,
                 functionParameters3,
                 Integer.MAX_VALUE);
-        }
     }
 
     @Test
@@ -199,7 +199,7 @@ public class LruCacheBlackBoxTest extends LruCacheSetup {
                 functionParameters,
                 null);
 
-        int[] functionParameters2 = new int[]{Integer.MIN_VALUE,Integer.MIN_VALUE};
+        int[] functionParameters2 = new int[]{Integer.MIN_VALUE, Integer.MIN_VALUE};
         lruCachePUT.run(LruCacheMethod.Put,
                 functionParameters2,
                 null);
@@ -211,7 +211,7 @@ public class LruCacheBlackBoxTest extends LruCacheSetup {
     }
 
     @Test
-    public void test10){
+    public void test10() {
         //constructor size = 2
         int[] functionParameters = new int[]{Integer.MAX_VALUE};
         lruCachePUT.run(LruCacheMethod.Constructor,
@@ -219,7 +219,7 @@ public class LruCacheBlackBoxTest extends LruCacheSetup {
                 null);
 
         //put key= -1, value = 2
-        int[] functionParameters2 = new int[]{-1,2};
+        int[] functionParameters2 = new int[]{-1, 2};
         lruCachePUT.run(LruCacheMethod.Put,
                 functionParameters2,
                 null);
