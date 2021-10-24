@@ -97,8 +97,6 @@ public class BinaryTreeSerializerTest {
         TreeNode root = new TreeNode(5);
         root.left = new TreeNode(3);
         root.right = new TreeNode(7);
-        root.left.left = new TreeNode(1);
-        root.left.right = new TreeNode(3);
         TreeNode rootret = bs.deserialize(s);
         assertEquals(root,rootret);
     }
