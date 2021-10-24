@@ -75,6 +75,6 @@ public class IpValidatorTest {
     @Test
     public void test11(){
         IpValidator tool = new IpValidatorImpl();
-        assertEquals("IPv4",tool.validIPAddress("192.168.-0.18"));
+        assertEquals("Neither",tool.validIPAddress("192.168.-0.18"));
     }
 }
