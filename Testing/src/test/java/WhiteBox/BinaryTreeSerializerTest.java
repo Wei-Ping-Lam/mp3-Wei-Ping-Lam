@@ -80,4 +80,22 @@ public class BinaryTreeSerializerTest {
         TreeNode rootret = bs.deserialize(s);
         assertEquals(root,rootret);
     }
+
+    @Test
+    public void deserializeTest4(){
+        BinaryTreeSerializer bs = new BinaryTreeSerializerImpl();
+        String s = "[]";
+        TreeNode root = null;
+        TreeNode rootret = bs.deserialize(s);
+        assertEquals(root,rootret);
+    }
+
+    @Test
+    public void deserializeTest5(){
+        BinaryTreeSerializer bs = new BinaryTreeSerializerImpl();
+        String s = "5";
+        TreeNode root = null;
+        TreeNode rootret = bs.deserialize(s);
+        assertEquals(root,rootret);
+    }
 }
