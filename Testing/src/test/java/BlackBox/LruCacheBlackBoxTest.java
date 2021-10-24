@@ -143,7 +143,7 @@ public class LruCacheBlackBoxTest extends LruCacheSetup {
                 2);
     }
 
-    @Test
+    @Test(expected = NullPointerException.class)
     public void test6(){
         //constructor size = 2
         int[] functionParameters = new int[]{0};
