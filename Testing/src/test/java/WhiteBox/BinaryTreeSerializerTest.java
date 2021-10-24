@@ -93,16 +93,12 @@ public class BinaryTreeSerializerTest {
     @Test
     public void deserializeTest5(){
         BinaryTreeSerializer bs = new BinaryTreeSerializerImpl();
-        String s = "[4,5,null,4,6,null,null,7,null,8,7,null,9,null,null,10,null,null,null]";
-        TreeNode root = new TreeNode(4);
-        root.left = new TreeNode(5);
-        root.left.left = new TreeNode(4);
-        root.left.right = new TreeNode(6);
-        root.left.right.left = new TreeNode(7);
-        root.left.right.left.right = new TreeNode(7);
-        root.left.right.left.left = new TreeNode(8);
-        root.left.right.left.left.right = new TreeNode(9);
-        root.left.right.left.left.right.left = new TreeNode(10);
+        String s = "[1,2,3,null,null,4,5,null,null,null,null]";
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+        root.right.left = new TreeNode(4);
+        root.right.right = new TreeNode(5);
         TreeNode rootret = bs.deserialize(s);
         assertEquals(root,rootret);
     }
