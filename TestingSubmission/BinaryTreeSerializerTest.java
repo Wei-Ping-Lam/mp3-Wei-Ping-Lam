@@ -11,7 +11,6 @@ public class BinaryTreeSerializerTest {
 
     @Test
     public void serializeTest(){
-        //@TODO: Delete/modify me
         BinaryTreeSerializer bs = new BinaryTreeSerializerImpl();
         TreeNode root = null;
         String ret = bs.serialize(root);
@@ -19,8 +18,7 @@ public class BinaryTreeSerializerTest {
     }
 
     @Test
-    public void deserializeTest2(){
-        //@TODO: Delete/modify me
+    public void deserializeTest(){
         BinaryTreeSerializer bs = new BinaryTreeSerializerImpl();
         String s = "[null]";
         TreeNode root = null;
@@ -28,5 +26,76 @@ public class BinaryTreeSerializerTest {
         assertEquals(root,rootret);
     }
 
-    //@TODO: Create more tests
+    @Test
+    public void serializeTest1(){
+        BinaryTreeSerializer bs = new BinaryTreeSerializerImpl();
+        TreeNode root = new TreeNode(3);
+        String ret = bs.serialize(root);
+        assertEquals("[3,null,null]",ret);
+    }
+
+    @Test
+    public void deserializeTest1(){
+        BinaryTreeSerializer bs = new BinaryTreeSerializerImpl();
+        String s = "[3,null,null]";
+        TreeNode root = new TreeNode(3);
+        TreeNode rootret = bs.deserialize(s);
+        assertEquals(root,rootret);
+    }
+
+    @Test
+    public void serializeTest2(){
+        BinaryTreeSerializer bs = new BinaryTreeSerializerImpl();
+        TreeNode root = new TreeNode(3);
+        root.left = new TreeNode(2);
+        String ret = bs.serialize(root);
+        assertEquals("[3,2,null,null,null]",ret);
+    }
+
+    @Test
+    public void deserializeTest2(){
+        BinaryTreeSerializer bs = new BinaryTreeSerializerImpl();
+        String s = "[3,2,null,null,null]";
+        TreeNode root = new TreeNode(3);
+        root.left = new TreeNode(2);
+        TreeNode rootret = bs.deserialize(s);
+        assertEquals(root,rootret);
+    }
+
+    @Test
+    public void serializeTest3(){
+        BinaryTreeSerializer bs = new BinaryTreeSerializerImpl();
+        TreeNode root = new TreeNode(3);
+        root.right = new TreeNode(2);
+        String ret = bs.serialize(root);
+        assertEquals("[3,null,2,null,null]",ret);
+    }
+
+    @Test
+    public void deserializeTest3(){
+        BinaryTreeSerializer bs = new BinaryTreeSerializerImpl();
+        String s = "[3,null,2,null,null]";
+        TreeNode root = new TreeNode(3);
+        root.right = new TreeNode(2);
+        TreeNode rootret = bs.deserialize(s);
+        assertEquals(root,rootret);
+    }
+
+    @Test
+    public void deserializeTest4(){
+        BinaryTreeSerializer bs = new BinaryTreeSerializerImpl();
+        String s = "[]";
+        TreeNode root = null;
+        TreeNode rootret = bs.deserialize(s);
+        assertEquals(root,rootret);
+    }
+
+    @Test
+    public void deserializeTest5(){
+        BinaryTreeSerializer bs = new BinaryTreeSerializerImpl();
+        String s = "[1,null,null,null]";
+        TreeNode root = new TreeNode(1);
+        TreeNode rootret = bs.deserialize(s);
+        assertEquals(root,rootret);
+    }
 }
