@@ -145,7 +145,7 @@ public class IpValidatorTest {
     }
 
     @Test
-    public void test22(){
+    public void test23(){
         IpValidator tool = new IpValidatorImpl();
         assertEquals("Neither",tool.validIPAddress("2001:0db8:85a3:0C00:0000:8a2e:0370:7334"));
     }
