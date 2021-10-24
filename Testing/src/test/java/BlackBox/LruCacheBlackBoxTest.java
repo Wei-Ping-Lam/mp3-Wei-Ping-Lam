@@ -157,4 +157,77 @@ public class LruCacheBlackBoxTest extends LruCacheSetup {
                 functionParameters2,
                 null);
     }
+
+    @Test
+    public void test7() {
+        int[]functionParameters = new int[]{100};
+        lruCachePUT.run(LruCacheMethod.Constructor,
+                functionParameters,
+                null);
+
+        for (int i = -45; i < 45; i++) {
+            int[] functionParameters2 = new int[]{i, i*2};
+            lruCachePUT.run(LruCacheMethod.Put,
+                    functionParameters2,
+                    null);
+        }
+    }
+
+    @Test
+    public void test8() {
+        int[] functionParameters = new int[]{5};
+        lruCachePUT.run(LruCacheMethod.Constructor,
+                functionParameters,
+                null);
+
+        int[] functionParameters2 = new int[]{Integer.MAX_VALUE,Integer.MAX_VALUE};
+        lruCachePUT.run(LruCacheMethod.Put,
+                functionParameters2,
+                null);
+
+        int[] functionParameters3 = new int[]{Integer.MAX_VALUE};
+        lruCachePUT.run(LruCacheMethod.Get,
+                functionParameters3,
+                Integer.MAX_VALUE);
+        }
+    }
+
+    @Test
+    public void test9() {
+        int[] functionParameters = new int[]{5};
+        lruCachePUT.run(LruCacheMethod.Constructor,
+                functionParameters,
+                null);
+
+        int[] functionParameters2 = new int[]{Integer.MIN_VALUE,Integer.MIN_VALUE};
+        lruCachePUT.run(LruCacheMethod.Put,
+                functionParameters2,
+                null);
+
+        int[] functionParameters3 = new int[]{Integer.MIN_VALUE};
+        lruCachePUT.run(LruCacheMethod.Get,
+                functionParameters3,
+                Integer.MIN_VALUE);
+    }
+
+    @Test
+    public void test10){
+        //constructor size = 2
+        int[] functionParameters = new int[]{Integer.MAX_VALUE};
+        lruCachePUT.run(LruCacheMethod.Constructor,
+                functionParameters,
+                null);
+
+        //put key= -1, value = 2
+        int[] functionParameters2 = new int[]{-1,2};
+        lruCachePUT.run(LruCacheMethod.Put,
+                functionParameters2,
+                null);
+
+        //get key = -1
+        int[] functionParameters3 = new int[]{-1};
+        lruCachePUT.run(LruCacheMethod.Get,
+                functionParameters3,
+                2);
+    }
 }
